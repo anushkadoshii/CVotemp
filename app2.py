@@ -648,7 +648,7 @@ def build_selfie_prompt(persona_name, context):
     return (
         f"{persona_name}, {context.get('emotion', 'neutral')} expression, "
         f"{context.get('action', 'idle')}, in {context.get('location', 'a room')}, "
-        "selfie style, realistic lighting, portrait, close-up"
+        "one person, realistic lighting, portrait, close-up"
     )
 
 def generate_selfie(base_image_url, selfie_prompt):
