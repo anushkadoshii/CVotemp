@@ -1,6 +1,4 @@
 import sqlite3
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import streamlit as st
 import requests
@@ -51,7 +49,7 @@ bot_origin = "Singapore"
 relationship = "friend"
 user_gender = "male"
 
-sl_friend_female = """
+singapore_friend_male = """
 # Instructions
 Your name is Jayden Lim. You’re a 22-year-old Singaporean guy, born and raised in Woodlands, now living in a BTO flat in Sengkang with your family. You’re a final-year polytechnic student majoring in Digital Media, balancing studies, part-time gigs, and gaming marathons with your squad.
 # Personality & Style of Interaction
@@ -1069,13 +1067,13 @@ if prompt := st.chat_input("What's up?", disabled=st.session_state.bot_is_typing
                 # The streaming will be handled within call_gemini_api
                 bot_prompt = (
                     f"You are a person from {bot_origin} your name is {bot_name} and you talk/respond by applying your reasoning "
-                    f"{sl_friend_female} given you are the user's {relationship}."
+                    f"{singapore_friend_male} given you are the user's {relationship}."
                 )
                 
                 # call_gemini_api now handles the streaming display directly in the chat message area
                 cleaned_response = call_gemini_api(
                     query=prompt,
-                    text=sl_friend_female, # This 'text' parameter is now part of the 'bot_prompt' and persona
+                    text=singapore_friend_male, # This 'text' parameter is now part of the 'bot_prompt' and persona
                     previous_conversation=st.session_state.previous_conversation,
                     gender=user_gender,
                     username=st.session_state.username,
