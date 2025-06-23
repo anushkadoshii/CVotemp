@@ -728,8 +728,8 @@ def end_current_activity():
         st.rerun() # Rerun to update the UI immediately
 
 
-st.title("Chat with Savi 🤖")
-st.markdown("Your 20-year-old Sri Lankan vibe twin. Try an activity, or just chat!")
+st.title("Chat with Jayden 🤖")
+st.markdown("Your 22-year-old Singaporean bro. Try an activity, or just chat!")
 
 activity_buttons_disabled = st.session_state.activity_in_progress is not None
 
