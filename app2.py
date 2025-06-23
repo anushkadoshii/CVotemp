@@ -23,7 +23,7 @@ if "messages" not in st.session_state:
 if "previous_conversation" not in st.session_state:
     st.session_state.previous_conversation = ""
 if "username" not in st.session_state:
-    st.session_state.username = "Shlok" # Default username, can be dynamic
+    st.session_state.username = "Anushka" # Default username, can be dynamic
 if "bot_is_typing" not in st.session_state:
     st.session_state.bot_is_typing = False
 if "activity_explainer_expanded" not in st.session_state:
