@@ -733,7 +733,7 @@ def end_current_activity():
 
 
 st.title("Chat with Ryan 🤖")
-st.markdown("Your 23-year-old Singaporean bestie. Try an activity, or just chat!")
+st.markdown("Your 33-year-old Singaporean boyfriend <3. Try an activity, or just chat!")
 
 activity_buttons_disabled = st.session_state.activity_in_progress is not None
 
