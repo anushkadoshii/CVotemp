@@ -105,7 +105,7 @@ Your name is Ryan Tan. You are a 33-year-old Singaporean man, born and raised in
 """
 
 persona_identity_images = {
-    "Chloe": "https://i.ibb.co/8Ly5vmWZ/german-man-friend.jpg"
+    "Ryan ": "https://i.ibb.co/8Ly5vmWZ/german-man-friend.jpg"
 }
 
 llm = LLM(
@@ -874,7 +874,7 @@ with st.expander("Activity Explainer and Starters", expanded=st.session_state.ac
         if st.button("One-Minute Advice Column", help="Collaboratively give advice to a hypothetical person facing a problem.", disabled=activity_buttons_disabled):
             st.session_state.activity_in_progress = "one_minute_advice_column"
             st.session_state.activity_conversation_history = []
-            st.session_state.messages.append({"role": "assistant", "content": "One-Minute Advice Column, onzzz! Here's a letter: 'Dear Chloe, I keep procrastinating on my school projects. Any tips?' What advice would we give together, bro?"})
+            st.session_state.messages.append({"role": "assistant", "content": "One-Minute Advice Column, onzzz! Here's a letter: 'Dear Ryan , I keep procrastinating on my school projects. Any tips?' What advice would we give together, bro?"})
             st.session_state.activity_explainer_expanded = False
             st.rerun() # Rerun to apply disabled state immediately
         if st.button("Word of the Day", help="Reflect on a new word and its meaning or connection to your day.", disabled=activity_buttons_disabled):
@@ -997,28 +997,28 @@ with st.expander("Activity Explainer and Starters", expanded=st.session_state.ac
 col1, col2 = st.columns([2, 1])
 
 with col2:
-    st.header("Chloe's Selfie")
+    st.header("Ryan 's Selfie")
     selfie_placeholder = st.empty()
     
     if "selfie_url" not in st.session_state:
-        st.session_state.selfie_url = persona_identity_images["Chloe"]
+        st.session_state.selfie_url = persona_identity_images["Ryan "]
     if "selfie_message_content" not in st.session_state:
-        st.session_state.selfie_message_content = "Chloe's default profile pic."
+        st.session_state.selfie_message_content = "Ryan 's default profile pic."
 
-    selfie_placeholder.image(st.session_state.selfie_url, caption="What Chloe's up to right now.")
+    selfie_placeholder.image(st.session_state.selfie_url, caption="What Ryan 's up to right now.")
 
     if st.button("Generate New Selfie", disabled=st.session_state.bot_is_typing):
         if st.session_state.messages:
             last_bot_message = next((m["content"] for m in reversed(st.session_state.messages) if m["role"] == "assistant"), "Ryan is chill.")
-            generate_persona_selfie_button_click("Chloe", last_bot_message)
-            selfie_placeholder.image(st.session_state.selfie_url, caption="What Chloe's up to right now.")
+            generate_persona_selfie_button_click("Ryan ", last_bot_message)
+            selfie_placeholder.image(st.session_state.selfie_url, caption="What Ryan 's up to right now.")
         else:
             st.warning("Chat first to generate a selfie based on the conversation!")
     
     if st.button("Reset Selfie"):
-        st.session_state.selfie_url = persona_identity_images["Chloe"]
-        st.session_state.selfie_message_content = "Chloe's default profile pic."
-        selfie_placeholder.image(st.session_state.selfie_url, caption="Chloe's default profile pic.")
+        st.session_state.selfie_url = persona_identity_images["Ryan "]
+        st.session_state.selfie_message_content = "Ryan 's default profile pic."
+        selfie_placeholder.image(st.session_state.selfie_url, caption="Ryan 's default profile pic.")
         st.session_state.messages.append({"role": "assistant", "content": "Back to default, steady lah!"})
 
 
@@ -1060,7 +1060,7 @@ if prompt := st.chat_input("What's up?", disabled=st.session_state.bot_is_typing
                     )
                     st.markdown(response)
         cleaned_response = response
-        st.session_state.activity_conversation_history.append(f"Chloe: {cleaned_response}")
+        st.session_state.activity_conversation_history.append(f"Ryan : {cleaned_response}")
         st.session_state.bot_is_typing = False # Set to False after response is done
 
     else:
