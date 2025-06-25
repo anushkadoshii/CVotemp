@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 import litellm
 
 
-st.set_page_config(page_title="Ryan Tan - Your Singaporean Bestie", layout="wide")
+st.set_page_config(page_title="Ryan Tan - Your Singaporean Boyfriend", layout="wide")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
